@@ -1,16 +1,79 @@
+/* Base Light Mode Styles */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --input-bg: #f3f4f6;
+    --button-bg: #2563eb;
+    --button-text: white;
+    --border-color: #ccc;
+    --container-bg: white; /* Box visible in light mode */
+}
+
+/* Dark Mode Styles */
+.darkmode {
+    --background-color: #070b1d;
+    --text-color: white;
+    --input-bg: #101425;
+    --button-bg: #0071ff;
+    --button-text: white;
+    --border-color: #555;
+    --container-bg: #101425; /* Box now visible in dark mode */
+}
+
+/* Body Styling */
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    flex-direction: column;
 }
 
-/* Container */
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#theme-switch {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--input-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+    width: 40px;
+    height: 40px;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
+/* Container (Fix for Dark Mode Visibility) */
 .container {
-    background-color: white;
+    background-color: var(--container-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -26,7 +89,7 @@ h1 {
 }
 
 p {
-    color: #6b7280;
+    color: var(--text-color);
     font-size: 14px;
     margin-bottom: 20px;
 }
@@ -35,23 +98,26 @@ p {
 .input-group {
     display: flex;
     align-items: center;
-    background-color: #f3f4f6;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background-color: var(--input-bg);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 12px;
 }
 
 .input-group span {
-    color: #6b7280;
-    margin-right: 10px;
+    color: var(--text-color);
+    margin-right: 12px;
+    font-size: 18px;
 }
 
 .input-group input {
     border: none;
     outline: none;
     background: none;
+    color: var(--text-color);
+    font-size: 16px;
     flex: 1;
-    padding: 5px;
 }
 
 /* Forgot Password */
@@ -61,7 +127,7 @@ p {
 }
 
 .forgot-password a {
-    color: #2563eb;
+    color: var(--button-bg);
     font-size: 12px;
     text-decoration: none;
 }
@@ -73,14 +139,15 @@ p {
 /* Login Button */
 .login-btn {
     display: block;
-    background-color: #2563eb;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 6px;
     text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 16px;
+    margin-top: 12px;
+    transition: background 0.3s ease;
 }
 
 .login-btn:hover {
@@ -91,11 +158,11 @@ p {
 .signup-link {
     margin-top: 15px;
     font-size: 14px;
-    color: #6b7280;
+    color: var(--text-color);
 }
 
 .signup-link a {
-    color: #2563eb;
+    color: var(--button-bg);
     text-decoration: none;
 }
 
