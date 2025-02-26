@@ -1,0 +1,125 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    position: relative; 
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.header a {
+    position: absolute;
+    left: 15px; 
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Chat Container */
+.chat-container {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 70vh;
+    text-align: center;
+}
+
+/* Messages */
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.bot-message {
+    background: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 50px; 
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex-grow: 1; 
+    height: 50px; 
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 25px; 
+    outline: none;
+    width: 100%; 
+    text-align: left; 
+}
+
+.chat-input i {
+    font-size: 24px; 
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+/* Footer Navigation */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-item {
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-item i {
+    display: block;
+    font-size: 20px;
+}
+
+.footer-item.active {
+    color: #007bff;
+}

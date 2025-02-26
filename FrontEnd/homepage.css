@@ -1,0 +1,152 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Full-screen container */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.search-bar i {
+    color: #888;
+}
+
+/* Learning Path */
+.learning-path, .quizzes, .help-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Quiz Items */
+.quiz-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.quiz-item div {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.quiz-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.quiz-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Help Section */
+.help-section {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer a {
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer a i {
+    display: block;
+    font-size: 20px;
+}
+
+.footer .active {
+    color: #007bff;
+}
