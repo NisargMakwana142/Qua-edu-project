@@ -7,6 +7,7 @@
     --button-text: white;
     --border-color: #ddd;
     --active-color: blue;
+    --icon-color: black; /* Icon color for light mode */
 }
 
 /* Dark Mode Styles */
@@ -18,6 +19,7 @@
     --button-text: white;
     --border-color: #555;
     --active-color: #0071ff;
+    --icon-color: white; /* Icon color for dark mode */
 }
 
 /* Body */
@@ -158,20 +160,30 @@ h2 {
     border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 10px 8px;
 }
 
-.nav-item {
+.footer-item {
     text-align: center;
-    color: var(--text-color);
+    color: var(--icon-color);
     text-decoration: none;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-item i {
-    font-size: 20px;
+.footer-item i {
+    font-size: 22px;
+    margin-bottom: 3px;
+    color: var(--icon-color);
 }
 
-.active {
+/* Active Page Highlight */
+.footer-item.active {
+    color: var(--active-color);
+}
+
+.footer-item.active i {
     color: var(--active-color);
 }
