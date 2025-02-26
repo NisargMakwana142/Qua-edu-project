@@ -1,10 +1,32 @@
-html, body {
+/* Base Light Mode Styles */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --input-bg: #f3f4f6;
+    --button-bg: #2563eb;
+    --button-text: white;
+    --border-color: #ccc;
+}
+
+/* Dark Mode Styles */
+.darkmode {
+    --background-color: #070b1d;
+    --text-color: white;
+    --input-bg: #101425;
+    --button-bg: #0071ff;
+    --button-text: white;
+    --border-color: #555;
+}
+
+/* Body Styling */
+body {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Full-screen container */
@@ -15,26 +37,54 @@ html, body {
     flex-direction: column;
 }
 
+/* Dark Mode Toggle */
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: absolute;
+    top: 5px; 
+    right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-switch {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--input-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+    width: 30px;
+    height: 30px;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
 /* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-icons img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Search Bar */
@@ -42,24 +92,23 @@ html, body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #e9ecef;
+    background-color: var(--input-bg);
     border-radius: 5px;
     margin: 15px;
 }
-
 .search-bar input {
     flex-grow: 1;
     padding: 8px;
     border: none;
     outline: none;
     background: none;
+    color: var(--text-color);
 }
-
 .search-bar i {
-    color: #888;
+    color: var(--text-color);
 }
 
-/* Learning Path */
+/* Learning Path, Quizzes, Help Section */
 .learning-path, .quizzes, .help-section {
     text-align: center;
     padding: 20px;
@@ -69,43 +118,39 @@ html, body {
 .quiz-item {
     display: flex;
     align-items: center;
-    background: white;
+    background: var(--background-color);
     padding: 10px;
     margin: 10px auto;
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .quiz-item img {
     width: 60px;
     height: 60px;
     border-radius: 10px;
 }
-
 .quiz-item div {
     margin-left: 10px;
     text-align: left;
 }
-
 .quiz-btn {
     display: inline-block;
     padding: 5px 10px;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: var(--button-bg);
+    border: 1px solid var(--button-bg);
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
 }
-
 .quiz-btn:hover {
-    background: #007bff;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
 }
 
 /* Help Section */
 .help-section {
-    background: #007bff;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
     padding: 20px;
     border-radius: 10px;
     margin: 20px;
@@ -115,13 +160,12 @@ html, body {
 .btn {
     display: inline-block;
     padding: 10px 15px;
-    background: #007bff;
-    color: white;
+    background: var(--button-bg);
+    color: var(--button-text);
     border-radius: 5px;
     text-decoration: none;
     margin-top: 10px;
 }
-
 .btn:hover {
     background: #0056b3;
 }
@@ -130,23 +174,20 @@ html, body {
 .footer {
     display: flex;
     justify-content: space-around;
-    background: white;
+    background: var(--background-color);
     padding: 10px 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
 }
-
 .footer a {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 14px;
 }
-
 .footer a i {
     display: block;
     font-size: 20px;
 }
-
 .footer .active {
-    color: #007bff;
+    color: var(--button-bg);
 }

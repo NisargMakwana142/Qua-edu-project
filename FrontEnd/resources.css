@@ -1,72 +1,145 @@
-/* Reset and general styling */
+/* Reset and General Styling */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: white;
+    background: var(--background-color);
+    color: var(--text-color);
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-/* Container */
+/* Dark Mode Variables */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --input-bg: #f3f4f6;
+    --button-bg: black;
+    --button-text: white;
+    --border-color: #ddd;
+    --active-color: blue;
+}
+
+/* Dark Mode Styles */
+.darkmode {
+    --background-color: #070b1d;
+    --text-color: white;
+    --input-bg: #101425;
+    --button-bg: #0071ff;
+    --button-text: white;
+    --border-color: #555;
+    --active-color: #0071ff;
+}
+
+/* Full-Screen Container */
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding-bottom: 60px; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed; 
+    top: 5px; 
+    right: 30px; 
+    z-index: 1000; 
+}
+
+#theme-switch {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--input-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    z-index: 100; /* Bring forward */
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+    width: 40px;
+    height: 40px;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 /* Header */
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.header i {
-    font-size: 20px;
-    color: #333;
-}
-
-.header h1 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.profile-icon {
-    width: 30px;
-    height: 30px;
-    background: #007bff;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    align-items: center;
+    padding: 25px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--background-color);
+    width: 100%;
+    position: relative;
+}
+
+/* Centering "Resources" text */
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+/* Back Arrow Position */
+.header a {
+    position: absolute;
+    left: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 22px;
 }
 
 /* Dropdown */
 .dropdown {
     padding: 15px;
+    width: 100%;
 }
 
 .dropdown select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
 
-/* Video Thumbnails */
+/* Video Thumbnails - Now Full Width */
 .video-thumbnails {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 15px;
+    flex-grow: 1;
 }
 
 .video-box {
-    height: 150px;
-    background: #f1f1f1;
+    width: 100%;
+    height: 200px;
+    background: var(--input-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,8 +147,8 @@ body, html {
 }
 
 .video-box i {
-    font-size: 30px;
-    color: black;
+    font-size: 40px;
+    color: var(--text-color);
 }
 
 /* Footer */
@@ -86,23 +159,23 @@ body, html {
     right: 0;
     display: flex;
     justify-content: space-around;
-    background: white;
+    background: var(--background-color);
     padding: 10px 0;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-item {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .footer-item i {
     display: block;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .footer-item.active {
-    color: #007bff;
+    color: var(--active-color);
 }

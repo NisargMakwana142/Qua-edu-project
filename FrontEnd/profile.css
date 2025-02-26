@@ -1,38 +1,97 @@
+/* Base Light Mode Styles */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --input-bg: #f3f4f6;
+    --button-bg: black;
+    --button-text: white;
+    --border-color: #ddd;
+    --active-color: blue;
+}
+
+/* Dark Mode Styles */
+.darkmode {
+    --background-color: #070b1d;
+    --text-color: white;
+    --input-bg: #101425;
+    --button-bg: #0071ff;
+    --button-text: white;
+    --border-color: #555;
+    --active-color: #0071ff;
+}
+
+/* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    color: var(--text-color);
 }
 
 /* Header */
 .header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    background-color: var(--background-color);
 }
 
+/* Center profile text */
 .header h1 {
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+    margin: 0;
 }
 
+/* Back button */
 .header a {
+    position: absolute;
+    left: 28px; /* Move it slightly left */
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
     font-size: 20px;
 }
 
-.profile-pic {
-    width: 40px;
-    height: 40px;
+/* Dark Mode Toggle */
+#theme-switch {
+    position: absolute;
+    right: 15px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+    background-color: var(--input-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+#theme-switch svg {
+    fill: var(--text-color);
+    width: 30px;
+    height: 30px;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 /* Profile Content */
@@ -47,8 +106,8 @@ body {
 }
 
 .profile-image-container img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
 }
 
@@ -56,37 +115,38 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: black;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 26px;
     margin-top: 10px;
 }
 
 .username {
     color: gray;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .bio {
     color: gray;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 5px;
 }
 
 .edit-profile-btn {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 24px;
+    border-radius: 25px;
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 16px;
 }
 
 /* Footer Navigation */
@@ -94,8 +154,8 @@ h2 {
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: white;
-    border-top: 1px solid #ddd;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
@@ -103,7 +163,7 @@ h2 {
 
 .nav-item {
     text-align: center;
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 14px;
 }
@@ -113,5 +173,5 @@ h2 {
 }
 
 .active {
-    color: blue;
+    color: var(--active-color);
 }
