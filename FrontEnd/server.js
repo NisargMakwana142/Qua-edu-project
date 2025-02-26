@@ -10,7 +10,7 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = process.env.GEMINI_API_KEY || "your-local-api-key";
 if (!apiKey) {
   console.error("⚠️ GEMINI_API_KEY is missing in .env file!");
   process.exit(1);
