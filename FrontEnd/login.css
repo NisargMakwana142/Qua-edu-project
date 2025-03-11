@@ -137,6 +137,7 @@ p {
 }
 
 /* Login Button */
+/* Login Button with Subtle Shine & Forward Effect */
 .login-btn {
     display: block;
     background-color: var(--button-bg);
@@ -147,11 +148,31 @@ p {
     text-align: center;
     font-size: 16px;
     margin-top: 12px;
-    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .login-btn:hover {
-    background-color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Subtle Shine Effect */
+.login-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease-in-out;
+}
+
+.login-btn:hover::before {
+    left: 120%;
 }
 
 /* Signup Link */
